@@ -1,7 +1,24 @@
 div.default {
+    position: relative;
+    top: 30px;
     width: 800px;
-    margin:0 auto;
+    margin: 0 auto;
 }
-p.default {
+
+p {
     word-break: break-all;
+}
+
+div.head {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: #00FFFF;
+    font-size: x-large;
+}
+
+a {
+    text-decoration: none;
+    color: blue;
 }

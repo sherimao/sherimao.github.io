@@ -1,0 +1,27 @@
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>佘日茂的博客</title>
+    <link rel="shortcut icon" type="image/x-icon" href="../favicon.ico">
+    <link rel="stylesheet" href="../style.css">
+    <link rel="import" href="../top.html" id="page1"/>
+
+</head>
+
+<body>
+    <div class="top"></div>
+    <script src="../js/jquery-3.6.4.min.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $(".top").load("../top.html");
+        });
+    </script>
+
+    <div class="default">
+        <h1>如何剪出n段最长的绳子</h1>
+        <p>给定长度已知但不同的m条绳子，如何剪出n段最长的绳子(其中n&lt;m)?</p>
+        <p>这个问题可以用二分法来解决，假设原始最长的一条绳子长度为a，则答案一定在[0,a]区间内，二分搜索这个区间内的值，遍历每条绳子看能剪出多少段绳子，最后看剪出来的绳子总数是否满足要求</p>
+        <i>2023-04-28</i>
+    </div>
+</body>
+</html>
