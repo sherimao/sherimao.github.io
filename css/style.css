@@ -62,10 +62,7 @@ p.bitNum {
 div.bias {
     display: inline-block;
     position: relative;
-    left: 90px;
-    top: 230px;
     width: 1px;
-    height: 100px;
     box-sizing: border-box;
     border: 1px solid #FFFFFF;
     transform: rotate(45deg);
