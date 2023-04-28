@@ -1,0 +1,7 @@
+div.default {
+    width: 800px;
+    margin:0 auto;
+}
+p.default {
+    word-break: break-all;
+}
