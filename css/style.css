@@ -36,6 +36,14 @@ a.head {
     color: blue;
 }
 
+div.default-bit {
+    position: relative;
+    top: 30px;
+    width: 600px;
+    margin: 0 auto;
+    background-color: #1F1F1F;
+}
+
 div.bit {
     display: inline-block;
     position: relative;

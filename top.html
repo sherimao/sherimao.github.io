@@ -5,9 +5,18 @@
 
 <body>
     <div class="head">
-        &nbsp;&nbsp;<a class="head" href="http://sherimao.github.io">首页</a>
-        &nbsp;<a class="head" href="http://sherimao.github.io/blog">博客</a>
-        &nbsp;<a class="head" href="http://sherimao.github.io/saying">名言</a>
+        <script>
+            domain = "sherimao.github.io";
+            arr = location.href.split(domain);
+            link = arr[0]+domain;
+            document.getElementById("home").href = link;
+            document.getElementById("blog").href = link+"/blog";
+            document.getElementById("saying").href = link+"/saying";
+        </script>
+
+        &nbsp;&nbsp;<a id="home" class="head">首页</a>
+        &nbsp;<a id="blog" class="head">博客</a>
+        &nbsp;<a id="saying" class="head">名言</a>
     </div>
 </body>
 </html>
