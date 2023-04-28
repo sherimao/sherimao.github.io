@@ -1,3 +1,7 @@
+body {
+    background-color: #000000;
+}
+
 div.default {
     position: relative;
     top: 30px;
@@ -7,6 +11,7 @@ div.default {
 
 p {
     word-break: break-all;
+    color: white;
 }
 
 div.head {
@@ -15,11 +20,63 @@ div.head {
     left: 0;
     width: 100%;
     background-color: #00FFFF;
+    color: blue;
     font-size: x-large;
+    text-align: center;
     z-index: 999;
 }
 
 a {
     text-decoration: none;
+    color: skyblue;
+}
+
+a.head {
+    text-decoration: none;
     color: blue;
+}
+
+div.bit {
+    display: inline-block;
+    position: relative;
+    top: 200px;
+    left: 10px;
+    border: 1px solid #FFFFFF;
+    border-radius: 50%;
+    width: 44px;
+    height: 44px;
+    background-color: #FFFF00;
+}
+
+p.bit {
+    text-align: center;
+    color: black;
+}
+
+p.bitNum {
+    border: 1px solid #FFFFFF;
+    display: inline-block;
+    background-color: #0000FF;
+}
+
+div.bias {
+    display: inline-block;
+    position: relative;
+    left: 90px;
+    top: 230px;
+    width: 1px;
+    height: 100px;
+    box-sizing: border-box;
+    border: 1px solid #FFFFFF;
+    transform: rotate(45deg);
+}
+
+div.vertical {
+    display: inline-block;
+    position: relative;
+    top: 230px;
+    width: 1px;
+    height: 20px;
+    box-sizing: border-box;
+    border: 1px solid #FFFFFF;
 }
