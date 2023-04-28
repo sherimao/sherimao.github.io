@@ -17,15 +17,11 @@ a.head {
 
 a {
     text-decoration: none;
-    color: skyblue;
+    color: yellow;
 }
 
 body {
     background-color: #000000;
-}
-
-h1 {
-    color: white;
 }
 
 div.default {
@@ -37,5 +33,9 @@ div.default {
 
 p {
     word-break: break-all;
+    color: white;
+}
+
+* {
     color: white;
 }
