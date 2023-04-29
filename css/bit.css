@@ -2,7 +2,7 @@
 div.default-bit {
     position: relative;
     top: 30px;
-    width: 600px;
+    width: 425px;
     margin: 0 auto;
     background-color: #1F1F1F;
 }
@@ -47,4 +47,14 @@ div.vertical {
     height: 20px;
     box-sizing: border-box;
     border: 1px solid #FFFFFF;
+}
+
+canvas.bit {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 425px;
+    height: 300px;
+    margin: 0 auto;
+    /*transform: translate(-425px, 0);*/
 }

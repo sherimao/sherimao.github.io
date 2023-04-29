@@ -24,22 +24,22 @@
         <div class="bit" style="top: 200px;"><p class="bit">C5</p></div>
         <div class="bit" style="top: 150px;"><p class="bit">C6</p></div>
         <div class="bit" style="top: 200px;"><p class="bit">C7</p></div>
-        <div class="bit" style="top: 0;"><p class="bit">C8</p></div>
-        <div class="vertical" style="left: -380px;"></div>
-        <div class="vertical" style="left: -336px; height: 70px;"></div>
-        <div class="vertical" style="left: -292px;"></div>
-        <div class="vertical" style="left: -248px; height: 120px;"></div>
-        <div class="vertical" style="left: -204px;"></div>
-        <div class="vertical" style="left: -160px; height: 70px;"></div>
-        <div class="vertical" style="left: -116px;"></div>
-        <div class="vertical" style="left: -72px; height: 220px;"></div>
-        <div class="bias" style="left: -410px; top: 180px; height: 30px;"></div>
-        <div class="bias" style="left: -340px; top: 155px; height: 75px; transform: rotate(60deg);"></div>
-        <div class="bias" style="left: -325px; top: 175px; height: 70px; transform: rotate(30deg);"></div>
-        <div class="bias" style="left: -200px; top: 135px; height: 190px; transform: rotate(65deg);"></div>
-        <div class="bias" style="left: -235px; top: 180px; height: 30px; transform: rotate(45deg);"></div>
-        <div class="bias" style="left: -170px; top: 130px; height: 140px; transform: rotate(35deg);"></div>
-        <div class="bias" style="left: -150px; top: 170px; height: 165px; transform: rotate(12deg);"></div>
+        <div class="bit" style="top: 10px;"><p class="bit">C8</p></div>
+<!--        <div class="vertical" style="left: -380px;"></div>-->
+<!--        <div class="vertical" style="left: -336px; height: 70px;"></div>-->
+<!--        <div class="vertical" style="left: -292px;"></div>-->
+<!--        <div class="vertical" style="left: -248px; height: 120px;"></div>-->
+<!--        <div class="vertical" style="left: -204px;"></div>-->
+<!--        <div class="vertical" style="left: -160px; height: 70px;"></div>-->
+<!--        <div class="vertical" style="left: -116px;"></div>-->
+<!--        <div class="vertical" style="left: -72px; height: 220px;"></div>-->
+<!--        <div class="bias" style="left: -410px; top: 180px; height: 30px;"></div>-->
+<!--        <div class="bias" style="left: -340px; top: 155px; height: 75px; transform: rotate(60deg);"></div>-->
+<!--        <div class="bias" style="left: -325px; top: 175px; height: 70px; transform: rotate(30deg);"></div>-->
+<!--        <div class="bias" style="left: -200px; top: 135px; height: 190px; transform: rotate(65deg);"></div>-->
+<!--        <div class="bias" style="left: -235px; top: 180px; height: 30px; transform: rotate(45deg);"></div>-->
+<!--        <div class="bias" style="left: -170px; top: 130px; height: 140px; transform: rotate(35deg);"></div>-->
+<!--        <div class="bias" style="left: -150px; top: 170px; height: 165px; transform: rotate(12deg);"></div>-->
         <br><br><br><br><br><br><br><br><br><br>&nbsp;
         <p class="bit-num">&nbsp;0001&nbsp;</p>
         <p class="bit-num">&nbsp;0010&nbsp;</p>
@@ -49,6 +49,55 @@
         <p class="bit-num">&nbsp;0110&nbsp;</p>
         <p class="bit-num">&nbsp;0111&nbsp;</p>
         <p class="bit-num">&nbsp;1000&nbsp;</p>
+
+        <canvas id="myCanvas" width="212" class="bit"></canvas>
+        <script>
+            var canvas = document.getElementById("myCanvas");
+            canvas.width = canvas.width * 2;
+            canvas.height = canvas.height * 2;
+            var ctx = canvas.getContext("2d");
+            ctx.strokeStyle = "white";
+            ctx.beginPath();
+            // C1-C2
+            ctx.moveTo(68, 188);
+            ctx.lineTo(50, 208);
+            // C2-C4
+            ctx.moveTo(166, 130);
+            ctx.lineTo(106, 166);
+            // C4-C8
+            ctx.moveTo(370, 42);
+            ctx.lineTo(208, 112);
+            // C3-C4
+            ctx.moveTo(174, 143);
+            ctx.lineTo(145, 202);
+            //C5-C6
+            ctx.moveTo(275, 185);
+            ctx.lineTo(255, 210);
+            //C6-C8
+            ctx.moveTo(375, 50);
+            ctx.lineTo(300, 155);
+            //C6-C8
+            ctx.moveTo(383, 55);
+            ctx.lineTo(350, 205);
+
+            ctx.moveTo(36, 246);
+            ctx.lineTo(36, 265);
+            ctx.moveTo(36+51, 196);
+            ctx.lineTo(36+51, 265);
+            ctx.moveTo(36+51*2, 246);
+            ctx.lineTo(36+51*2, 265);
+            ctx.moveTo(36+51*3, 146);
+            ctx.lineTo(36+51*3, 265);
+            ctx.moveTo(36+51*4, 246);
+            ctx.lineTo(36+51*4, 265);
+            ctx.moveTo(36+51*5, 196);
+            ctx.lineTo(36+51*5, 265);
+            ctx.moveTo(36+51*6, 246);
+            ctx.lineTo(36+51*6, 265);
+            ctx.moveTo(36+51*7, 56);
+            ctx.lineTo(36+51*7, 265);
+            ctx.stroke();
+        </script>
     </div>
 
 </body>
