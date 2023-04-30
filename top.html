@@ -17,6 +17,22 @@
         &nbsp;&nbsp;<a id="home" class="head">首页</a>
         &nbsp;<a id="blog" class="head">博客</a>
         &nbsp;<a id="saying" class="head">名言</a>
+
+        <a id="clock" style="float: right; color: black; width: 230px; font-family: Times New Roman, serif;"></a>
+        <script>
+            function updateClock() {
+                var now = new Date();
+                var year = now.getFullYear();
+                var month = now.getMonth() + 1;
+                var date = now.getDate();
+                var hours = now.getHours();
+                var minutes = now.getMinutes();
+                var seconds = now.getSeconds();
+                document.getElementById('clock').textContent =year + '-' + month.toString().padStart(2, '0') + '-' + date.toString().padStart(2, '0') + ' ' + hours.toString().padStart(2, '0') + ':' + minutes.toString().padStart(2, '0') + ':' + seconds.toString().padStart(2, '0');
+            }
+            updateClock();
+            setInterval(updateClock, 100);
+        </script>
     </div>
 </body>
 </html>
