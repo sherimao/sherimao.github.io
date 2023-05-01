@@ -4,9 +4,11 @@
     <title>佘日茂的博客</title>
     <link rel="shortcut icon" type="image/x-icon" href="../favicon.ico">
     <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/toc.css">
+    <link rel="stylesheet" href="../css/prism.css">
 </head>
 
-<body>
+<body id="body">
     <div class="top"></div>
     <script src="../js/jquery-3.6.4.min.js"></script>
     <script type="text/javascript">
@@ -14,11 +16,62 @@
             $(".top").load("../top.html");
         });
     </script>
-    <div class="default">
-        <a href="4.html">三门问题通俗易懂的解释</a><br>
-        <a href="3.html">如何用代码求根号n</a><br>
-        <a href="2.html">如何剪出n段最长的绳子</a><br>
-        <a href="1.html">为什么觉得晨会浪费时间</a>
+
+    <div id="toc">
+        <ul id="toc-ul">
+        </ul>
     </div>
+
+    <script src="../js/prism.js"></script>
+    <script>
+        var title = [
+            '为什么觉得晨会浪费时间',
+            '如何剪出n段最长的绳子',
+            '如何用代码求根号n',
+            '三门问题通俗易懂的解释',
+        ];
+        // 添加目录
+        var ul = document.getElementById('toc-ul');
+        for (var i=4; i>0; i--) {
+            var li = document.createElement('li');
+            var a = document.createElement('a');
+            a.href = '#blog' + i;
+            a.textContent = title[i-1];
+            li.appendChild(a);
+            ul.appendChild(li);
+        }
+        // 添加内容
+        for (i=4; i>0; i--) {
+            var body = document.getElementById('body');
+            var div = document.createElement('div');
+            div.classList.add('content');
+            div.id = 'blog' + i;
+            body.appendChild(div);
+        }
+        // 填充内容
+        for (let i=1; i<=4; i++) {
+            fetch(i+'.html')
+                .then(response => response.text())
+                .then(data => {
+                    document.getElementById('blog'+i).innerHTML = data;
+                    Prism.highlightAll();
+                });
+        }
+
+        // 添加点击事件
+        var tocLinks = document.querySelectorAll('#toc a');
+        for (i = 0; i < tocLinks.length; i++) {
+            tocLinks[i].addEventListener('click', function(event) {
+                event.preventDefault();
+                var targetId = this.getAttribute('href').substring(1);
+                var targetContent = document.getElementById(targetId);
+                var activeContent = document.querySelector('.content.active');
+                if (activeContent) {
+                    activeContent.classList.remove('active');
+                }
+                targetContent.classList.add('active');
+            });
+        }
+    </script>
 </body>
 </html>

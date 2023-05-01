@@ -24,7 +24,7 @@ body {
     background-color: #000000;
 }
 
-div.default {
+div.default, .content {
     position: relative;
     top: 30px;
     width: 800px;
@@ -36,6 +36,15 @@ p {
     color: white;
 }
 
+i {
+    color: darkgrey;
+}
+
 * {
     color: white;
+}
+
+pre[class*="language-"] {
+    border: 2px solid green;
+    border-radius: 10px;
 }

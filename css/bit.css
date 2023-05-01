@@ -1,9 +1,10 @@
 
 div.default-bit {
-    position: relative;
+    position: absolute;
     top: 50%;
+    left: 50%;
     width: 425px;
-    margin: -150px auto;
+    margin: -150px -212px auto;
     background-color: #1F1F1F;
 }
 
