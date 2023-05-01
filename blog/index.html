@@ -28,10 +28,11 @@
             '如何剪出n段最长的绳子',
             '如何用代码求根号n',
             '三门问题通俗易懂的解释',
+            '几种shell输出换行的方法',
         ];
         // 添加目录
         var ul = document.getElementById('toc-ul');
-        for (var i=4; i>0; i--) {
+        for (var i=title.length; i>0; i--) {
             var li = document.createElement('li');
             var a = document.createElement('a');
             a.href = '#blog' + i;
@@ -40,7 +41,7 @@
             ul.appendChild(li);
         }
         // 添加内容
-        for (i=4; i>0; i--) {
+        for (i=title.length; i>0; i--) {
             var body = document.getElementById('body');
             var div = document.createElement('div');
             div.classList.add('content');
@@ -48,7 +49,7 @@
             body.appendChild(div);
         }
         // 填充内容
-        for (let i=1; i<=4; i++) {
+        for (let i=1; i<=title.length; i++) {
             fetch(i + '.html')
                 .then(response => response.text())
                 .then(data => {
