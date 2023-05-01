@@ -1,25 +1,6 @@
-<html>
-<head>
-    <meta charset="utf-8">
-    <title>佘日茂的博客</title>
-    <link rel="shortcut icon" type="image/x-icon" href="../favicon.ico">
-    <link rel="stylesheet" href="../css/style.css">
-    <link rel="import" href="../top.html"/>
-</head>
-
-<body>
-    <div class="top"></div>
-    <script src="../js/jquery-3.6.4.min.js"></script>
-    <script type="text/javascript">
-        $(document).ready(function () {
-            $(".top").load("../top.html");
-        });
-    </script>
-
-    <div class="default">
-        <h1>如何用代码求根号n</h1>
-        <p>求根号n的方法有很多，比如二分法、牛顿法。其中二分法是线性收敛的，大概是说随着迭代次数增加，有效数字线性地增加。而牛顿法是平方收敛的，大概是说每迭代一次，有效数字会成倍增长。但是这两个方法都有一个问题，就是初值怎么选。可能有人会说，n大于1时，根号n一定小于n，初值选n不就行了吗？在比较小的范围内确实没什么问题，但是当n很大，比如1e300的时候，你会发现开始的时候收敛非常慢，迭代很多次都不出结果。不过我们发现，计算机内存储一个实数的方式一般都是用符号+指数+底数的形式，而根号n的值，大概就是原始值的指数部分除以2。选取这个为初始值，很快就能算出结果。</p>
-        <pre><code class="language-go">
+<div class="default" id="blog-content3">
+    <p>求根号n的方法有很多，比如二分法、牛顿法。其中二分法是线性收敛的，大概是说随着迭代次数增加，有效数字线性地增加。而牛顿法是平方收敛的，大概是说每迭代一次，有效数字会成倍增长。但是这两个方法都有一个问题，就是初值怎么选。可能有人会说，n大于1时，根号n一定小于n，初值选n不就行了吗？在比较小的范围内确实没什么问题，但是当n很大，比如1e300的时候，你会发现开始的时候收敛非常慢，迭代很多次都不出结果。不过我们发现，计算机内存储一个实数的方式一般都是用符号+指数+底数的形式，而根号n的值，大概就是原始值的指数部分除以2。选取这个为初始值，很快就能算出结果。</p>
+    <pre><code class="language-go">
 const (
 	mask     = 0x7FF
 	shift    = 64 - 11 - 1
@@ -42,9 +23,7 @@ func newton(x float64) float64 {
 	}
 	return ans
 }
-        </code></pre>
-        <p>其实这个问题有其他更好的解法，大家可以参考go/src/math/sqrt.go，由于我也看不懂就不做解释了。</p>
-        <i>2023-04-28</i>
-    </div>
-</body>
-</html>
+    </code></pre>
+    <p>其实这个问题有其他更好的解法，大家可以参考go/src/math/sqrt.go，由于我也看不懂就不做解释了。</p>
+    <i>2023-04-28</i>
+</div>

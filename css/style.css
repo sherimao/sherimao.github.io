@@ -3,25 +3,26 @@ div.head {
     top: 0;
     left: 0;
     width: 100%;
-    background-color: #00FFFF;
+    background-color: cyan;
     color: blue;
     font-size: x-large;
-    text-align: center;
+    /*text-align: left;*/
     z-index: 999;
 }
 
 a.head {
+
     text-decoration: none;
     color: blue;
 }
 
 a {
     text-decoration: none;
-    color: yellow;
+    color: deepskyblue;
 }
 
 body {
-    background-color: #000000;
+    background-color: black;
 }
 
 div.default, .content {
@@ -47,4 +48,8 @@ i {
 pre[class*="language-"] {
     border: 2px solid green;
     border-radius: 10px;
+}
+
+h1 {
+    color: yellow;
 }
