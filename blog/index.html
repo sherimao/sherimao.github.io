@@ -48,32 +48,31 @@
             div.id = 'blog' + i;
             body.appendChild(div);
         }
-        // 填充内容
-        for (let i=1; i<=title.length; i++) {
-            fetch(i + '.html')
-                .then(response => response.text())
-                .then(data => {
-                    document.getElementById('blog' + i).innerHTML = data;
-                    var blogContent = document.getElementById('blog-content' + i);
-                    var h1 = document.createElement('h1');
-                    h1.textContent = title[i-1];
-                    blogContent.insertBefore(h1, blogContent.firstChild);
-                    Prism.highlightAll();
-                });
-        }
 
-        // 添加点击事件
         var tocLinks = document.querySelectorAll('#toc a');
-        for (i=0; i<tocLinks.length; i++) {
+        for (let i=0; i<tocLinks.length; i++) {
             tocLinks[i].addEventListener('click', function(event) {
                 event.preventDefault();
-                var targetId = this.getAttribute('href').substring(1);
-                var targetContent = document.getElementById(targetId);
-                var activeContent = document.querySelector('.content.active');
-                if (activeContent) {
-                    activeContent.classList.remove('active');
-                }
-                targetContent.classList.add('active');
+                var j = tocLinks.length - i;
+                // 填充内容
+                fetch(j + '.html')
+                .then(response => response.text())
+                .then(data => {
+                    document.getElementById('blog' + j).innerHTML = data;
+                    var blogContent = document.getElementById('blog-content' + j);
+                    var h1 = document.createElement('h1');
+                    h1.textContent = title[j - 1];
+                    blogContent.insertBefore(h1, blogContent.firstChild);
+                    Prism.highlightAll();
+                    // 添加点击事件
+                    var targetId = this.getAttribute('href').substring(1);
+                    var targetContent = document.getElementById(targetId);
+                    var activeContent = document.querySelector('.content.active');
+                    if (activeContent) {
+                        activeContent.classList.remove('active');
+                    }
+                    targetContent.classList.add('active');
+                });
             });
         }
     </script>

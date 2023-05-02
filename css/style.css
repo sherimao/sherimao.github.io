@@ -43,6 +43,7 @@ i {
 
 * {
     color: white;
+    font-family: Arial, sans-serif;
 }
 
 pre[class*="language-"] {
