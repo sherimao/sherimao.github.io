@@ -54,3 +54,12 @@ pre[class*="language-"] {
 h1 {
     color: yellow;
 }
+
+table {
+    border-collapse: collapse;
+    border: 1px solid white;
+}
+
+th {
+    color: yellow;
+}
