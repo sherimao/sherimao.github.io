@@ -10,6 +10,11 @@ div.head {
     z-index: 999;
 }
 
+div.quote {
+    border: 2px solid gray;
+    border-radius: 10px;
+}
+
 a.head {
 
     text-decoration: none;
