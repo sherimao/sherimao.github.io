@@ -87,3 +87,17 @@ table {
 th {
     color: yellow;
 }
+
+.baidu:before{
+    border-radius: 3px;
+    background-color: #2219d4;
+    content: "du";
+    color: white;
+}
+
+.zhihu:before{
+    border-radius: 3px;
+    background-color: #3274f6;
+    content: "知";
+    color: white;
+}
