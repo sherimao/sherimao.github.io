@@ -1,5 +1,11 @@
 <div class="default" id="blog-content11">
     <p>go里面slice扩容算法是，cap不够1024的，直接翻倍；cap超过1024的，新cap变为老cap的1.25倍。下面来证明一下这个算法的平均时间复杂度是O(1)。</p>
-    <p>假设slice初始长度为a，每次append一个元素，目标长度为a*c<sup>n</sup>。这里a=1024，c=1.25。则我们需要写的总长度(包括扩容复制)为a+a*c+a*c<sup>2</sup>+...+a*c<sup>n</sup>。可以看到这是一个等比数列，求和得a(1-c<sup>n+1</sup>)/(1-c)，我们把这个数和目标长度相除，得比例A=1+(c<sup>n</sup>-1)/(c<sup>n</sup>(c-1))。当n&rarr;&infin;，(c<sup>n</sup>-1)/c<sup>n</sup>=1，即A=1+1/(c-1)。也就是说，在go里面，平均每append一个元素要写5次。而在c++的vector里，因为c=2，所以平均每append一个元素要写2次。</p>
+    <p>假设slice初始长度为a，每次append一个元素，目标长度为最坏情况，最后一次append的时候刚好复制了一遍，即a*c<sup>n</sup>+1。这里a=1024，c=1.25。则我们需要写的总长度(包括扩容复制)为</p>
+    <p style="text-align: center">a+a*c+a*c<sup>2</sup>+...+a*c<sup>n</sup>+(a*c<sup>n</sup>+1)</p>
+    <p>可以看到前面(n+1)项是一个等比数列，求和得</p>
+    <p style="text-align: center">a(1-c<sup>n+1</sup>)/(1-c)+a*c<sup>n</sup>+1</p>
+    <p>我们把这个数和目标长度相除，得比例</p>
+    <p style="text-align: center">A=2+(a*c<sup>n</sup>-c-a+1)/(a*c<sup>n+1</sup>-a*c<sup>n</sup>+c-1)</p>
+    <p>当n&rarr;&infin;，A&rarr;2+1/(c-1)。也就是说，在go里面，最坏的情况下平均每append一个元素要写6次。而在c++的vector里，因为c=2，所以最坏情况平均每append一个元素要写3次。</p>
     <i>2023-05-18</i>
 </div>
