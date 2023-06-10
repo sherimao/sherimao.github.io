@@ -30,7 +30,8 @@ body {
 }
 
 div.default, .content {
-    position: relative;
+    position: absolute;
+    left: 200px;
     top: 30px;
     width: 800px;
     margin: 0 auto;
