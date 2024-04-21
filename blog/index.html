@@ -36,6 +36,7 @@
             '三种级别的无穷',
             'go slice扩容机制',
             '七个基本单位的定义',
+            '随机生成字符串冲突的概率',
         ];
         // 添加目录
         var ul = document.getElementById('toc-ul');
@@ -81,6 +82,15 @@
                     targetContent.classList.add('active');
                 });
             });
+        }
+        function getValue() {
+            var s = parseInt(document.getElementById('input-13-s').value);
+            var b = parseInt(document.getElementById('input-13-b').value);
+            var n = parseInt(document.getElementById('input-13-n').value);
+            var N = Math.pow(s, b);
+            var e = 2.718281828;
+            var result = 1-Math.pow(e, -n*(n-1)/2/N);
+            document.getElementById('input-13-result').value = result.toFixed(10);
         }
     </script>
 </body>

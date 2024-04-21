@@ -41,7 +41,13 @@ p {
     word-break: break-all;
     color: white;
 }
-
+input {
+    background: black;
+    border-color: white;
+}
+button {
+    background: #3274f6;
+}
 i {
     color: darkgrey;
 }

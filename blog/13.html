@@ -1,0 +1,15 @@
+<div class="default" id="blog-content13">
+    <p>在计算机领域，经常需要生成随机字符串，同时要求字符串唯一。完全唯一很难，实际应用中，只要冲突的概率较小就能接受。现在我们来看下怎么计算冲突的概率。</p>
+
+    <p>首先我们看下<a href="https://baike.baidu.com/item/生日悖论/2715290" target="_blank">生日悖论</a>。这个问题其实跟生日悖论是一样的。假设可选的字符集个数是s，字符串的长度是b，需要生成的字符串个数是n，则所有不同字符串的个数N=s<sup>b</sup>，存在冲突的概率是1-e<sup>-n(n-1)/2N</sup>。</p>
+
+    <label>
+        可选的字符集个数：<input id="input-13-s" value="36"><br>
+        字符串的长度：<input id="input-13-b" value="8"><br>
+        需要生成的字符串个数：<input id="input-13-n" value="1000000"><br>
+        <button onclick="getValue()">计算存在冲突的概率</button>：<input type="text" id="input-13-result" readonly style="border-color: gray">
+    </label>
+    <br>
+    <br>
+    <i>2024-04-21</i>
+</div>
