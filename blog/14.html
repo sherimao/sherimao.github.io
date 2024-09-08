@@ -1,0 +1,53 @@
+<div class="default" id="blog-content14">
+    <p>如果一件事在n次测试一共发生了k次，那么它再次发生的概率是多少呢？</p>
+
+    <p>比如说，你在抽取某个游戏道具，抽了n次，中了k次，那再抽一次，有多大概率能中呢？如果n=1，k=0，你不能因为抽一次没中就说它的概率是0吧？下面我们来分析一下。</p>
+    <h2>
+        准备知识
+    </h2>
+    <h3>
+        贝叶斯公式
+    </h3>
+    <p>
+        P(A|B) = P(B|A)P(A)/P(B)
+    </p>
+    <h3>
+        概率密度
+    </h3>
+    <p>
+        描述随机变量在某个取值点处发生可能性的函数，在其定义域上的积分=1。
+    </p>
+    <h3>
+        贝塔函数
+    </h3>
+    <p>
+        定义B(P,Q) = ∫<sub>0</sub><sup>1</sup> x<sup>P-1</sup>(1-x)<sup>Q-1</sup>dx
+    </p>
+    <p>
+        公式B(P,Q) = (P-1)!(Q-1)!/(P+Q-1)!
+    </p>
+
+    <h2>
+        推导
+    </h2>
+    <p>
+        这里我们明确一下这个问题，抽中道具的概率，是系统预先设定好的，可能是0-1之间的任意一个数，而我们要计算的是这个概率的期望值。在贝叶斯公式中，事件A就是抽中的概率(假定为x)，B就是抽了n次，中了k次，由于概率不是离散型的，这里我们得用概率密度来计算。
+    </p>
+    <p>
+        P(B|A)就是在A确定的情况下B发生的概率，即概率x已知的情况下，抽n次中k次的概率，所以<span style="color: springgreen;">P(B|A) = x<sup><span style="color: springgreen;">k</span></sup>(1-x)<sup><span style="color: springgreen;">n-k</span></sup></span>。注意这里不需要乘组合系数，因为抽n次中k次，说的是发生的事件，只能是其中的一种，不能同时发生。
+    </p>
+    <p>
+        P(A)得用概率密度，假定<span style="color: springgreen;">P(A) = 1</span>，意思是说，系统预先设定好的概率，可能是0-1之间的任意一个数，而且是等可能的。
+    </p>
+    <p>
+        <span style="color: springgreen;">P(B) = ∫<sub><span style="color: springgreen;">0</span></sub><sup><span style="color: springgreen;">1</span></sup> x<sup><span style="color: springgreen;">k</span></sup>(1-x)<sup><span style="color: springgreen;">n-k</span></sup>P(A)dx = k!(n-k)!/(n+1)!</span>，意思是在系统预先设定好的各种概率的情况下，B发生的概率的总和。
+    </p>
+    <p>
+        把上面三项代入贝叶斯公式，可得<span style="color: springgreen;">P(A|B) = x<sup><span style="color: springgreen;">k</span></sup>(1-x)<sup><span style="color: springgreen;">n-k</span></sup>(n+1)!/k!/(n-k)!</span>
+    </p>
+    <p>
+        P(A|B)的期望值=∫<sub>0</sub><sup>1</sup> xP(A|B)dx=<span style="color: red;">(k+1)/(n+2)</span>
+    </p>
+
+    <i>2024-09-08</i>
+</div>
