@@ -47,6 +47,7 @@
             var a = document.createElement('a');
             a.href = '#blog' + i;
             a.textContent = title[i-1];
+            a.id = 'title' + i;
             li.appendChild(a);
             ul.appendChild(li);
         }
@@ -64,6 +65,13 @@
             tocLinks[i].addEventListener('click', function(event) {
                 event.preventDefault();
                 var j = tocLinks.length - i;
+                // 高亮
+                document.getElementById('title' + j).style.color = 'springgreen';
+                for (k=tocLinks.length; k>0; k--) {
+                    if (k !== j) {
+                        document.getElementById('title'+k).style.color = 'deepskyblue';
+                    }
+                }
                 // 填充内容
                 fetch(j + '.html')
                 .then(response => response.text())
